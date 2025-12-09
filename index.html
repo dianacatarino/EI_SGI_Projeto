@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Página Inicial | La Redoute 3D</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo" style="display:flex; align-items:center; gap:8px;">
+                <img src="images/logo.png" alt="La Redoute Logo" style="height:100px; width:auto;">
+            </a>
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="#">Novidades</a>
+                <a href="#">Promoções</a>
+                <a href="#">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- LISTAGEM DE PRODUTOS -->
+    <main class="produtos" id="produtos" style="padding: 3rem 4rem;">
+        <h2 style="text-align:center; margin-bottom: 2rem;">Produtos em Destaque</h2>
+
+        <div class="produtos-grid" style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        ">
+
+            <!-- PRODUTO 1 -->
+            <div class="produto-card" style="
+                background: #fff;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+                transition: transform 0.3s;
+            " onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                <div class="produto-3d-container" style="width:100%; height:250px;">
+                    <canvas id="three-canvas-produto1"></canvas>
+                </div>
+
+                <div style="padding:1rem;">
+                    <h3>Gira-Discos Vintage</h3>
+                    <p style="color:#888; font-size:0.9rem;">Ref. 12345</p>
+                    <p style="color:#d40000; font-weight:600;">149,99€</p>
+                    <a href="produto.html" class="btn-comprar"
+                        style="display:block; text-align:center; margin-top:1rem;">Ver Detalhes</a>
+                </div>
+            </div>
+
+            <!-- PRODUTO 2 -->
+            <div class="produto-card">
+                <div class="produto-imagem-container"
+                    style="width:100%; height:250px; display:flex; justify-content:center; align-items:center; background:#fff;">
+                    <img src="https://cdn.laredoute.com/cdn-cgi/image/width=500,height=500,fit=pad,dpr=1/products/3/7/5/375ca65ab5ec8ba00467cd9d7e5a6868.jpg"
+                        alt="Produto 2" style="max-height:180px; max-width:100%; object-fit:contain;">
+                </div>
+                <div style="padding:1rem;">
+                    <h3>Lâmpada Retro</h3>
+                    <p style="color:#888; font-size:0.9rem;">Ref. 23456</p>
+                    <p style="color:#d40000; font-weight:600;">39,99€</p>
+                    <a href="#" class="btn-comprar" style="display:block; text-align:center; margin-top:1rem;">Ver
+                        Detalhes</a>
+                </div>
+            </div>
+
+            <!-- PRODUTO 3 -->
+            <div class="produto-card">
+                <div class="produto-imagem-container"
+                    style="width:100%; height:250px; display:flex; justify-content:center; align-items:center; background:#fff;">
+                    <img src="https://cdn.laredoute.com/cdn-cgi/image/width=500,height=500,fit=pad,dpr=1/products/b/7/b/b7bbdb7d350a057afecd5151cfb1d968.jpg"
+                        alt="Produto 3" style="max-height:180px; max-width:100%; object-fit:contain;">
+                </div>
+                <div style="padding:1rem;">
+                    <h3>Cadeira de Madeira</h3>
+                    <p style="color:#888; font-size:0.9rem;">Ref. 34567</p>
+                    <p style="color:#d40000; font-weight:600;">89,99€</p>
+                    <a href="#" class="btn-comprar" style="display:block; text-align:center; margin-top:1rem;">Ver
+                        Detalhes</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2025 La Redoute 3D — Projeto Sistemas Gráficos e Interação</p>
+    </footer>
+
+    <!-- Three.js e script -->
+    <script src="/node_modules/es-module-shims.js"></script>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "/node_modules/three/build/three.module.js",
+            "three/addons/": "/node_modules/three/examples/jsm/"
+        }
+    }
+    </script>
+    <script type="module" src="scripts/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gira-discos Vintage | La Redoute 3D</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo" style="display:flex; align-items:center; gap:8px;">
+                <img src="images/logo.png" alt="La Redoute Logo" style="height:100px; width:auto;">
+            </a>
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="#">Novidades</a>
+                <a href="#">Promoções</a>
+                <a href="#">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main class="produto-detalhe">
+        <!-- Lado esquerdo: canvas 3D -->
+        <section class="produto-galeria">
+            <canvas id="three-canvas"></canvas>
+
+            <!-- Controles de rotação -->
+            <div class="produto-controles">
+                <button id="btn-braco">🦾</button>
+                <button id="btn-disco">💿</button>
+                <button id="btn-tampa">🪟</button>
+                <button id="btn-start-todas">🎬</button>
+                <button id="btn-toggle-light">💡</button>
+
+                <button id="btn-toggle-play">▶</button>
+                <button id="btn-reset-todas">⟲</button>
+            </div>
+        </section>
+
+        <!-- Lado direito: informações -->
+        <section class="produto-info">
+            <h1 class="produto-nome">Gira-discos Vintage</h1>
+            <p class="produto-referencia">Ref: 12345</p>
+            <p class="produto-preco">149,99 €</p>
+
+            <div class="produto-opcoes">
+                <p>Cor:</p>
+                <ul class="swatches">
+                    <li title="Madeira Normal" class="active" data-cor="madeira-normal">
+                        <span class="swatch" style="background-color: #785f4c;"></span>
+                    </li>
+                    <li title="Madeira Clara" data-cor="madeira-clara">
+                        <span class="swatch" style="background-color: #deb887;"></span>
+                    </li>
+                    <li title="Branco" data-cor="branco">
+                        <span class="swatch" style="background-color: #ffffff; border: 1px solid #ccc;"></span>
+                    </li>
+                </ul>
+
+                <label for="quantidade">Quantidade:</label>
+                <input type="number" id="quantidade" value="1" min="1">
+            </div>
+
+            <button class="btn-comprar">Adicionar ao carrinho</button>
+
+            <div class="produto-descricao">
+                <h2>Descrição</h2>
+                <p>
+                    Este gira-discos vintage combina design clássico com tecnologia moderna.
+                    Explore o produto em 3D para ver os detalhes do braço, base e tampa, e visualize-o sob diferentes
+                    condições de iluminação.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Secção de informações adicionais -->
+    <section class="produto-detalhes-extra">
+        <h2>Detalhes Técnicos</h2>
+        <ul>
+            <li>Material: Madeira e metal</li>
+            <li>Dimensões: 42 x 35 x 12 cm</li>
+            <li>Compatível com vinis 33/45/78 RPM</li>
+            <li>Saída RCA e Bluetooth</li>
+        </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 La Redoute 3D — Projeto Sistemas Gráficos e Interação</p>
+    </footer>
+
+    <!-- Three.js e script -->
+    <script src="/node_modules/es-module-shims.js"></script>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "/node_modules/three/build/three.module.js",
+            "three/addons/": "/node_modules/three/examples/jsm/"
+        }
+    }
+    </script>
+    <script type="module" src="scripts/produto.js"></script>
+</body>
+
+</html>
